@@ -1,0 +1,18 @@
+.item {
+    width: 50px;
+    height: 3px;
+    border: 1px solid #dddddd;
+    font-size: 14px;
+    margin: 2px;
+    padding: 5px 10px;
+    color: black;
+}
+
+.item.disable {
+    cursor: not-allowed;
+    color: #dddddd;
+}
+
+.item.active{
+    color: #f40;
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ReactComponent",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/HECHONG999/ReactComponentsLibrary.git",
+  "author": "HECHONG999 <1259796851@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.13.1"
+  }
+}
