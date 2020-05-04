@@ -1,0 +1,17 @@
+.three-layout {
+    display: flex;
+}
+
+.main {
+    flex: 1 1 auto;
+    order: 2;
+    background: aqua;
+}
+
+.left-side {
+    order: 1;
+}
+
+.right-side {
+    order: 3;
+}

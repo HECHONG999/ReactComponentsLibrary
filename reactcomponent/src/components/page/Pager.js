@@ -1,16 +1,22 @@
 import React from 'react';
 import "./Pager.css"
-
+/**
+ * 分页组件
+ * 属性：
+ * 1. current：初始页码
+ * 2. total：总数据量
+ * 3. limit：页容量，每页显示的数据量
+ * 4. panelNumber：数字页码最多显示多少个
+ * 5. onPageChange：当页码改变的事件
+ */
 export default function Pager(props) {
     let pageNumber = getTotalPage(props);
-    let min = getMin(props.current, pageNumber, props);
+    let min = getMin(props.current, props);
     let max = getMax(min, pageNumber, props)
     let spanArr = []
-    console.log(min, max)
     for(let i = min; i < max ; i ++) {
         spanArr.push(<span onClick={() => {toPage(i, pageNumber, props)}} className={ i === props.current ? "active item" : "item" } key={i}>{i}</span>)
     }
-    console.log(spanArr)
     return (
         <>
             <span className={ props.current === 1 ? "item disable" : "item "} onClick={() => { toPage(1, pageNumber, props)} }>首页</span>
@@ -23,7 +29,7 @@ export default function Pager(props) {
     )
 }
 
-function getMin(current, pageNumber, props) {
+function getMin(current, props) {
     let min = current - Math.floor( props.panolNumber - 1 ) / 2;
     if( min < 1 ) {
         min = 1
@@ -53,7 +59,7 @@ function toPage(target, pageNumber, props) {
     //     return
     // }
     if( target == props.current) { return}
-   props.onChange && props.onChange(target)
+   props.onPageChange && props.onPageChange(target)
 }
 
 /**
